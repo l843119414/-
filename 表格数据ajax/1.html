@@ -1,0 +1,32 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+
+<form method="post" id="form_signup">
+    <input type="number" name="number1">
+    <input type="number" name="number2">
+    <input type="number" name="number3">
+    <input type="button" value="submit" value="提交" >
+</form>
+<script>
+   
+  $.ajax({
+                url: 'q.php',
+                type: 'POST',
+                data: {'number1': number1,'number2': number2,'number3': number3},
+                dataType: 'json',
+                success: function(returnData)
+                {
+                  console.log(data);
+                }
+            });
+</script>
+
+</body>
+</html>
