@@ -7,10 +7,10 @@ $num = $a + $b + $c;
 $d_arr = explode(',',$d);
 if($num<=100){
 if(in_array($num,$d_arr)){
-      echo  "$num ,是质数";
+      echo  json_encode("$num ,是质数");
 }else{
-    echo "$num ,不是质数";
+    echo json_encode("$num ,不是质数");
 }}else{
-    echo "$num ,大于100";
+    echo json_encode("$num ,大于100");
 }
 ?>
