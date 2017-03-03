@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+
+<form method="post" >
+    <input type="number" name="number1">
+    <input type="number" name="number2">
+    <input type="number" name="number3">
+    <input  type="button" value="submit" value="提交" onClick="checkSubmit()">
+</form>
+<script>
+function checkSubmit(){
+   var a = $('input[name="number1"]').val();
+   var b = $('input[name="number2"]').val();
+   var c = $('input[name="number3"]').val();
+  $.ajax({
+                url: 'q.php',
+                type: 'POST',
+                data: {'number1': a,'number2': b,'number3': c},
+                dataType: 'json',
+                success: function(returnData)
+                {
+                  alert(returnData);
+                }
+            });
+}
+</script>
+</body>
+</html>
